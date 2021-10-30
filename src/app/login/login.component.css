@@ -1,0 +1,33 @@
+.card {
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.card-body{
+  display: flex;
+}
+
+div.img-form.mb-3.mt-3{
+  min-height: 300px;
+}
+
+.content-form{
+  padding: 16px;
+  margin: 20px;
+  max-width: 300px;
+  height: 300px;
+  background-color: #e7eaeb;
+  border-radius: 5px;
+  border: 0.2px solid green;
+}
+
+input{
+  border: none;
+}
+
+
+
+
+
+
