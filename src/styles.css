@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+a{
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #e67e22;
+}
+
+.btn-success{
+  width: 100%;
+  font-weight: bold;
+  background-color: #57b846;
+}
+

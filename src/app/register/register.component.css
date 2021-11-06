@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+
+.card {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 550px;
+  border-radius: 5px;
+  border: 0.2px solid green;
+}
+
+.card-img-top{
+  background-size: cover;
+  height: 300px;
+}
+
+h1{
+  font-family: 'Zen Antique', serif;
+  font-size: 30px;
+}
+
+label{
+  font-weight: bold;
+}
+
+label.form-check-label{
+  font-weight: normal;
+}
+
+input{
+  border: 0.2px solid black;
+}
+
+

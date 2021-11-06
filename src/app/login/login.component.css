@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+
 .card {
   margin: 0 auto;
   margin-top: 20px;
-  font-weight: bold;
+  width: 1330px;
+  border-radius: 5px;
+  border: 0.2px solid green;
+}
+
+.card-header{
+  font-family: 'Zen Antique', serif;
+  text-align: center;
+  background-color: #57b846;
 }
 
 .card-body{
@@ -14,17 +24,52 @@ div.img-form.mb-3.mt-3{
 
 .content-form{
   padding: 16px;
-  margin: 20px;
-  max-width: 300px;
-  height: 300px;
+  padding-top: 0px;
+  margin-top: 16px;
+  margin-left: 18px;
+  width: 300px;
+  height: 420px;
   background-color: #e7eaeb;
   border-radius: 5px;
   border: 0.2px solid green;
 }
 
-input{
-  border: none;
+button.btn.btn-sucess{
+  padding-bottom: 10px;
 }
+
+.separation p{
+  text-align: center;
+}
+
+.mb-3{
+  font-weight: bold;
+}
+
+.form-input{
+  display: block;
+}
+
+input.form-control{
+  padding: 5px 10px 5px 40px;
+}
+
+.icon{
+  position: absolute;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.invalid-feedback{
+  font-size: 13px;
+  font-weight: normal;
+}
+input{
+  border: 0.2px solid black;
+}
+
+
 
 
 

@@ -1,29 +1,92 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+
 <div class="card">
-  <div class="card-header text-white bg-success">
-    Se Connecter
+  <div class="card-header text-white">
+    <h1>Se Connecter</h1>
   </div>
   <div class="card-body">
     <div class="img-form mb-3 mt-3">
       <img src="assets/img/login/informatic.jpg" alt="image proche du formulaire">
     </div>
     <div class="content-form">
-      <form>
+      <form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="mb-3 mt-3">
           <label for="email" class="form-label">Email :</label>
-          <input type="email" class="form-control" id="email" placeholder="Entrez votre email" name="email">
+          <div class="form-input">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Adresse e-mail"
+              formControlName="email"
+              [ngClass] = "{
+                'is-invalid': loginForm.get('email')?.touched && !loginForm.get('email')?.valid
+              } "
+            >
+            <div class="invalid-feedback">
+              <span *ngIf="loginForm.get('email')?.errors?.required">
+                Entrez votre e-mail
+              </span>
+              <span *ngIf="loginForm.get('email')?.errors?.email">
+                l'E-mail n'est pas valide
+              </span>
+            </div>
+          </div>
         </div>
         <div class="mb-3">
           <label for="pwd" class="form-label">Mot de passe :</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Mot de passe" name="pswd">
+          <div class="form-input">
+            <span class="icon"><i class="fas fa-lock"></i></span>
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Mot de passe"
+              formControlName="password"
+              [ngClass] = "{
+                'is-invalid': loginForm.get('password')?.touched && !loginForm.get('password')?.valid
+              } "
+            >
+            <div class="invalid-feedback">
+              <span *ngIf="loginForm.get('password')?.errors?.required">
+                Entrez votre mot de passe
+              </span>
+              <span *ngIf="loginForm.get('password')?.errors?.minlength">
+                8 caractères minimum
+              </span>
+              <span *ngIf="loginForm.get('password')?.errors?.minlength">
+                15 caractères maximum
+              </span>
+            </div>
+
+          </div>
         </div>
-        <div class="form-check mb-3">
+        <div class="form-check mb-2">
           <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" name="agree">Agree
+            <input
+              class="form-check-input"
+              type="checkbox"
+              formControlName="remember"
+              >Se souvenir
           </label>
         </div>
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!loginForm.valid">Connexion
+        </button><br><br>
 
-        <button type="submit" class="btn btn-success">Connexion</button>
+        <a class="form-link" href="">Mot de passe oublié ?</a><hr>
+        <a routerLink="/register">Créer un compte</a>
       </form>
     </div>
   </div>
 </div>
+
+<!--<hr>
+<p>Dirty: {{ loginForm.dirty }}</p>
+<p>Pristine: {{ loginForm.pristine }}</p>
+<p>Valid: {{ loginForm.valid }}</p>
+<p>Invalid: {{ loginForm.invalid }}</p>
+<p>Value: </p>
+<pre> {{ loginForm.value | json }}</pre>-->
