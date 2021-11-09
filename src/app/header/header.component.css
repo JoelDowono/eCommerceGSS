@@ -1,0 +1,151 @@
+.topnav{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0px;
+  border-bottom: 2px solid black;
+  height: 30px;
+  width: 100%;
+  align-items: center;
+  font-size: 14px;
+}
+
+.topnav-left{
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.topnav-right{
+ padding-right: 30px;
+ padding-bottom: 10px;
+}
+
+.topnav-right a{
+  color: black;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.topnav-right a:hover{
+  color: #e47282;
+}
+
+
+.topnav-left i {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.topnav-left p {
+  border-right: 2px solid black;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+a{
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-contain-right a{
+  color: black;
+  font-size: 18px;
+  font-family: 'Zen Antique', serif;
+  margin: 20px;
+}
+
+.nav-contain-right a:hover {
+  border-bottom: 3px solid #e47282;
+  color: #e47282;
+}
+
+.nav-contain{
+  border-bottom: 2px solid black;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0px;
+}
+
+#logo img{
+  cursor: pointer;
+  padding-left: 50px;
+  height: 75px;
+}
+
+.nav-contain a.active{
+  color: #e47282;
+  border-bottom: 3px solid #e47282;
+}
+
+.input-group{
+  border: 2px solid black;
+}
+
+.carousel-caption h5{
+  font-family: 'Zen Antique', serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.carousel-caption p{
+  font-size: 20px;
+  font-weight: bold;
+  color: #e47282;
+}
+.input-group{
+  height: 30px;
+  width: 180px;
+  margin-right: 20px;
+}
+
+.form-control{
+  height: 26px;
+}
+
+.btn-search{
+  color: #e47282;
+  border: 0px;
+  height: 26px;
+}
+
+.btn-search:hover{
+  color: white;
+  background-color: #e47282;
+}
+
+i.fa-shopping-cart{
+  color: black;
+  margin-right: 20px;
+  vertical-align: -5px;
+}
+
+.carousel-inner{
+  border-bottom: 2px solid black;
+}
+
+.carousel-item {
+  height: 88vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+
+
+
+

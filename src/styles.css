@@ -1,11 +1,13 @@
-a{
-  outline: none;
-  text-decoration: none;
-  cursor: pointer;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Zen+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
 
-a:hover {
-  color: #e67e22;
+body{
+  font-family: "Lato","Arial",sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
 }
 
 .btn-success{
@@ -13,4 +15,6 @@ a:hover {
   font-weight: bold;
   background-color: #57b846;
 }
+
+
 

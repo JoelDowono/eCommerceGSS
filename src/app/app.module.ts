@@ -26,7 +26,7 @@ export const ROUTES : Routes = [
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'notfoud', component: NotfoundComponent},
-  {path:'', component: ShopComponent},
+  {path:'', component: HomeComponent},
   {path:'**', redirectTo: 'notfound', pathMatch: 'full'}
 ];
 
