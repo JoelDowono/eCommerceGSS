@@ -1,0 +1,54 @@
+.feature-box-1 {
+  display: flex;
+  padding-top: 10px;
+  margin-left: 100px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.row{
+  margin-bottom: 10px;
+}
+
+.feature-content h4{
+  font-weight: bold;
+}
+
+.icon-circle{
+  border-radius: 50%;
+  border: 2px solid;
+  width: 54px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.feature-box-1 .icon {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  background: #fc5356;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 37px;
+  line-height: 70px;
+}
+
+.feature-box-1 h4 {
+  color: #fff;
+  font-weight: bold;
+}
+.feature-box-1 p {
+  color: #fff;
+}
+
+section{
+  background-color: #fc5356;
+  height: 90px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+

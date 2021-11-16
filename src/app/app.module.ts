@@ -16,9 +16,14 @@ import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { FeaturesComponent } from './features/features.component';
+import { PartnersComponent } from './partners/partners.component';
+import { AccountComponent } from './account/account.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 export const ROUTES : Routes = [
   {path:'home', component: HomeComponent},
+  {path:'account', component: AccountComponent},
   {path:'shop', component: ShopComponent},
   {path:'cart', component: CartComponent},
   {path:'single-product/id', component: SingleProductComponent},
@@ -42,7 +47,11 @@ export const ROUTES : Routes = [
     CartComponent,
     HeaderComponent,
     FooterComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    FeaturesComponent,
+    PartnersComponent,
+    AccountComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

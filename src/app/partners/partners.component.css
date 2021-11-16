@@ -1,0 +1,76 @@
+.row{
+  width: 100%;
+  display: flex;
+  padding-left: 110px;
+  padding-bottom: 0;
+  padding-top: 10px;
+}
+
+.our-partner{
+  margin-left: 15px;
+  width: 200px;
+  height: 110px;
+  padding: 0 0 40px;
+  background: #f9f9f9;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 3px solid #e05d6f;
+}
+
+.our-partner:hover {
+  border-bottom: 5px solid #fc5356;
+}
+
+.our-partner .pic {
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
