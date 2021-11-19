@@ -1,5 +1,21 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
+<app-navigation></app-navigation>
+
+<nav aria-label="breadcrumb">
+  <div class="nav-contain">
+    <div class="nav-left">
+      <h3> Connexion </h3>
+      <p>Connectez-vous</p>
+    </div>
+    <div class="nav-right">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Connexion</li>
+      </ol>
+    </div>
+  </div>
+</nav>
 
 <div class="card">
   <div class="card-header text-white">
@@ -72,12 +88,12 @@
         </div>
         <button
           type="submit"
-          class="btn btn-success"
+          class="btn"
           [disabled]="!loginForm.valid">Connexion
         </button><br><br>
 
         <a class="form-link" href="">Mot de passe oublié ?</a><hr>
-        <a routerLink="/register">Créer un compte</a>
+        <a class="form-link" routerLink="/register">Créer un compte</a>
       </form>
     </div>
   </div>
@@ -90,3 +106,7 @@
 <p>Invalid: {{ loginForm.invalid }}</p>
 <p>Value: </p>
 <pre> {{ loginForm.value | json }}</pre>-->
+
+<app-features></app-features>
+<app-partners></app-partners>
+<app-footer></app-footer>

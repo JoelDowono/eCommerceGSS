@@ -1,17 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
 
+/* nav */
+nav{
+  background-color: white;
+  padding: 40px 0;
+  border-bottom: 2px solid black;
+  margin: 0 auto;
+  height: 50px;
+  font-family: 'Zen Antique', serif;
+  margin-bottom: 30px;
+}
+
+.nav-contain{
+  width: 1000px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  height: 100%;
+}
+
+.nav-left{
+  color: black;
+  line-height: 0%;
+}
+
+a{
+  text-decoration: none;
+  color: #fc5356;
+}
+
+.breadcrumb{
+  font-weight: bold;
+}
+
+.active{
+  color: black;
+}
+
+
+/* login page */
 .card {
   margin: 0 auto;
   margin-top: 20px;
   width: 1330px;
   border-radius: 5px;
-  border: 0.2px solid green;
+  border: 0.2px solid black;
+  height: 740px;
 }
 
 .card-header{
   font-family: 'Zen Antique', serif;
   text-align: center;
-  background-color: #57b846;
+  background-color: #fc5356;
+  height: 60px;
+}
+
+h1 {
+  font-size: 30px;
 }
 
 .card-body{
@@ -28,14 +74,22 @@ div.img-form.mb-3.mt-3{
   margin-top: 16px;
   margin-left: 18px;
   width: 300px;
-  height: 420px;
+  height: 450px;
   background-color: #e7eaeb;
   border-radius: 5px;
-  border: 0.2px solid green;
+  border: 0.2px solid black;
 }
 
-button.btn.btn-sucess{
+.form-label {
+  color: black;
+  font-weight: bold;
+}
+
+button.btn{
+  font-weight: bold;
   padding-bottom: 10px;
+  color: white;
+  background-color: #fc5356;
 }
 
 .separation p{
@@ -52,6 +106,8 @@ button.btn.btn-sucess{
 
 input.form-control{
   padding: 5px 10px 5px 40px;
+  font-size: 15px;
+  border: 0.2px solid black;
 }
 
 .icon{
@@ -59,16 +115,22 @@ input.form-control{
   font-size: 15px;
   padding-left: 10px;
   padding-top: 5px;
+  color: black;
 }
 
 .invalid-feedback{
   font-size: 13px;
   font-weight: normal;
 }
-input{
-  border: 0.2px solid black;
+
+a.form-link, label.form-check-label {
+  color: black;
+  font-weight: bold;
 }
 
+a.form-link:hover {
+  color: #fc5356;
+}
 
 
 

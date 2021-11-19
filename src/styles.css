@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Zen+Antique&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+@import '~@cds/core/global.min.css';
 
 body{
   font-family: "Lato","Arial",sans-serif;
@@ -10,11 +11,6 @@ body{
   background-color: #f1f1f1;
 }
 
-.btn-success{
-  width: 100%;
-  font-weight: bold;
-  background-color: #57b846;
-}
 
 
 

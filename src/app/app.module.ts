@@ -20,10 +20,14 @@ import { FeaturesComponent } from './features/features.component';
 import { PartnersComponent } from './partners/partners.component';
 import { AccountComponent } from './account/account.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const ROUTES : Routes = [
   {path:'home', component: HomeComponent},
   {path:'account', component: AccountComponent},
+  {path:'wishlist', component: WishlistComponent},
+  {path:'checkout', component: CheckoutComponent},
   {path:'shop', component: ShopComponent},
   {path:'cart', component: CartComponent},
   {path:'single-product/id', component: SingleProductComponent},
@@ -51,7 +55,9 @@ export const ROUTES : Routes = [
     FeaturesComponent,
     PartnersComponent,
     AccountComponent,
-    NavigationComponent
+    NavigationComponent,
+    WishlistComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,

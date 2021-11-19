@@ -8,11 +8,19 @@
 }
 
 .row{
+  margin-left: 20px;
   margin-bottom: 10px;
+  line-height: 0%;
+  width: 1200px;
+}
+
+.feature-content{
+  margin-top: 15px;
 }
 
 .feature-content h4{
   font-weight: bold;
+  font-size: 20px;
 }
 
 .icon-circle{
@@ -42,6 +50,7 @@
 }
 .feature-box-1 p {
   color: #fff;
+  margin-top: 10px;
 }
 
 section{

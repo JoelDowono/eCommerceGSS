@@ -1,12 +1,51 @@
 <app-navigation></app-navigation>
 
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/home">Accueil</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Mon compte</li>
-  </ol>
+  <div class="nav-contain">
+    <div class="nav-left">
+      <h3> Mon compte </h3>
+      <p> tout à propos de vous </p>
+    </div>
+    <div class="nav-right">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Mon compte</li>
+      </ol>
+    </div>
+  </div>
 </nav>
 
+
+<div class="container">
+    <div class="content-sidenav">
+      <ul class="nav-list">
+        <a class="nav-link" id="active"> Connexion/Inscription</a>
+        <a class="nav-link">Mot de passe oublié</a>
+        <a class="nav-link ">Mon compte</a>
+        <a class="nav-link">Carnet d'adresses</a>
+        <a class="nav-link">Liste de souhaits</a>
+        <a class="nav-link">Retour</a>
+      </ul>
+    </div>
+    <div class="content-area">
+      <div class="content-area-top">
+        <h6>MON COMPTE</h6>
+        <ul class="content-area-ul">
+          <li><a href="">Modifier vos informations</a></li>
+          <li><a href="">Changez votre mot de passe</a></li>
+          <li><a href="">Modifier votre liste de souhaits</a></li>
+        </ul>
+      </div> <hr>
+      <div class="content-area-down">
+        <h6>MES COMMANDES</h6>
+        <ul class="content-area-ul">
+          <li><a href="">Historique des commandes</a> </li>
+          <li><a href="">Acheter à nouveau</a></li>
+          <li><a href="">Demandes de retour</a></li>
+        </ul>
+      </div>
+      </div>
+</div>
 
 <app-features></app-features>
 <app-partners></app-partners>
