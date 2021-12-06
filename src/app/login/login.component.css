@@ -4,7 +4,7 @@
 nav{
   background-color: white;
   padding: 40px 0;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid #8c8c8c;
   margin: 0 auto;
   height: 50px;
   font-family: 'Zen Antique', serif;
@@ -45,7 +45,7 @@ a{
   margin-top: 20px;
   width: 1330px;
   border-radius: 5px;
-  border: 0.2px solid black;
+  border: 1px solid #8c8c8c;
   height: 740px;
 }
 
@@ -77,7 +77,7 @@ div.img-form.mb-3.mt-3{
   height: 450px;
   background-color: #e7eaeb;
   border-radius: 5px;
-  border: 0.2px solid black;
+  border: 1px solid #8c8c8c;
 }
 
 .form-label {
@@ -130,6 +130,10 @@ a.form-link, label.form-check-label {
 
 a.form-link:hover {
   color: #fc5356;
+}
+
+.btn {
+  font-size: 14px
 }
 
 

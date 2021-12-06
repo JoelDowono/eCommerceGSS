@@ -1,1 +1,64 @@
-<p>contact works!</p>
+<app-navigation></app-navigation>
+
+<nav aria-label="breadcrumb">
+  <div class="nav-contain">
+    <div class="nav-left">
+      <h3> CONTACTER-NOUS </h3>
+      <p> Veuillez nous contacter par mail ci-dessous </p>
+    </div>
+    <div class="nav-right">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+      </ol>
+    </div>
+  </div>
+</nav>
+
+<div class="container padding-bottom-3x mb-2 mt-5">
+  <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+          <form class="card mt-4">
+              <div class="card-body">
+                <div class="form-group">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user blue"></i></span>
+                      <input type="text" name="InputName" placeholder="Name: *" class="form-control info_user" autofocus="autofocus" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope blue"></i></span>
+                      <input type="email" name="InputEmail" placeholder="Email: *" class="form-control info_user" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-phone blue"></i></span>
+                      <input type="number" name="InputCno" placeholder="Phone" class="form-control info_user" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-comment blue"></i></span>
+                      <textarea name="InputMessage" placeholder="Votre message: *" rows="6" class="form-control" type="text" required></textarea>
+                  </div>
+              </div>
+              <div class="">
+                  <button type="reset" value="Reset" name="reset" class="btn">Reset <span class="glyphicon glyphicon-refresh"></span></button>
+              </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-success" type="submit">Réinitialiser mon mot de passe</button>
+                <a routerLink="/home" class="link-back">retour</a>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+
+<app-features></app-features>
+<app-partners></app-partners>
+<app-footer></app-footer>

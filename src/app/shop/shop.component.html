@@ -14,6 +14,7 @@
     </div>
   </div>
 </nav>
+
 <div class="row">
   <div class="col-md-4 col-sm-12">
     <ul class="nav-list">
@@ -43,53 +44,13 @@
         </div>
       </div>
     </div>
-   <div class="row">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-    </div>
   </div>
 </div>
-<!--
-<div class="container">
-  <div class="content-sidenav">
-    <ul class="nav-list">
-      <a class="nav-link" id="active"> Matériel informatique</a>
-      <a class="nav-link">Fournitures de bureau</a>
-      <a class="nav-link ">Fournitures scolaires</a>
-      <a class="nav-link">Autres</a>
-      <a class="nav-link">Retour</a>
-    </ul>
-  </div>
-  <div class="content-area">
-    <div class="container mt-100">
-      <div class="row">
+
+<p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
 
 
-      </div>
-      <div class="row">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-
-
-
-       <div *ngFor="let article of articles">
+       <!-- <div *ngFor="let article of articles">
           {{article.article_description}} {{article.article_picture}} {{article.article_category}} {{article.article_created}}
         </div>-->
 

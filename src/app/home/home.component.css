@@ -230,6 +230,18 @@ span{
   font-weight: 550;
 }
 
+@media only screen and (max-width: 992px) {
+  .about-right {
+    display: none;
+  }
+
+  .about-inner-column {
+    width: 100%;
+    text-align: justify;
+    padding-right: 0;
+  }
+}
+
 
 
 

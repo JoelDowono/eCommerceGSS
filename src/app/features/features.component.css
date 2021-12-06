@@ -61,3 +61,42 @@ section{
   margin-bottom: 0px;
 }
 
+/* responsive */
+@media only screen and (max-width: 1350px) {
+  .row{
+    width: 100%;
+  }
+  .feature-box-1{
+    margin-left: 0;
+  }
+  .clearfix{
+    margin-left: 35%;
+    margin-right: 0;
+    padding: 0;
+    max-width: 300px;
+  }
+  #content-row{
+    flex-direction: column;
+    align-content: center;
+  }
+  #features{
+    height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .col-lg-4{
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 510px) {
+  .clearfix .row{
+    margin-left: 0;
+  }
+
+  .clearfix{
+    margin-left: 20%;
+  }
+}
+

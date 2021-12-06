@@ -3,6 +3,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { PaginatorModule } from 'primeng/paginator';
+
+
 
 
 import { AppComponent } from './app.component';
@@ -13,7 +16,6 @@ import { ShopComponent } from './shop/shop.component';
 import { ProductsComponent } from './shop/products/products.component';
 import { SingleProductComponent } from './shop/single-product/single-product.component';
 import { CartComponent } from './shop/cart/cart.component';
-import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -23,6 +25,13 @@ import { AccountComponent } from './account/account.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { ContactComponent } from './contact/contact.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DeleteProductModalComponent } from './components/delete-product-modal/delete-product-modal.component';
+import { AddOrEditProductModalComponent } from './components/add-or-edit-product-modal/add-or-edit-product-modal.component';
+
+
 
 export const ROUTES : Routes = [
   {path:'home', component: HomeComponent},
@@ -32,11 +41,12 @@ export const ROUTES : Routes = [
   {path:'shop', component: ShopComponent},
   {path:'cart', component: CartComponent},
   {path:'single-product/id', component: SingleProductComponent},
-  {path:'contact', component: ContactComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'notfoud', component: NotfoundComponent},
   {path:'', component: HomeComponent},
+  {path:'forgotpassword', component: ForgotpasswordComponent},
+  {path:'contact', component: ContactComponent},
   {path:'**', redirectTo: 'notfound', pathMatch: 'full'}
 ];
 
@@ -58,13 +68,19 @@ export const ROUTES : Routes = [
     AccountComponent,
     NavigationComponent,
     WishlistComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ForgotpasswordComponent,
+    ContactComponent,
+    DashboardComponent,
+    DeleteProductModalComponent,
+    AddOrEditProductModalComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
-    HttpClientModule
+    HttpClientModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 0px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid #8c8c8c;
   height: 30px;
   width: 100%;
   align-items: center;
@@ -37,7 +37,7 @@
 }
 
 .topnav-left p {
-  border-right: 2px solid black;
+  border-right: 1px solid #8c8c8c;
   padding-right: 10px;
   font-weight: bold;
 }
@@ -69,7 +69,7 @@ a{
 }
 
 .nav-contain{
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid #8c8c8c;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -88,7 +88,7 @@ a{
 }
 
 .input-group{
-  border: 2px solid black;
+  border: 1px solid black;
   height: 30px;
   width: 180px;
   margin-right: 20px;
