@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailValidator, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { StorageService } from '../services/storage.service';
 import { UsersService } from '../services/users.service';
 
 
@@ -13,10 +15,8 @@ export class LoginComponent implements OnInit {
   //déclaration de la propriété loginForm
   public loginForm!: FormGroup;
 
-
-
   //injection du Formbuilder dans le constructeur
-  constructor(private fb: FormBuilder, private usersService: UsersService) { }
+  constructor(private fb: FormBuilder, private usersService: UsersService, private storageService: StorageService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -33,14 +33,18 @@ export class LoginComponent implements OnInit {
     const isRemember = this.loginForm.get("remember")?.value ? "oui" : "non"; //ici je passe d'un booléen true/false à une chaine de caractère qui vaut oui/non.
     console.log("Donnée du formulaire..." + myEmail + " " + myPassword + " " + isRemember);
     var users = {
-      user_email : myEmail,
+      user_mail : myEmail,
       user_password : myPassword
     }
+    console.log(users);
 
+    //données qui viennent du backend
     this.usersService.Login(users).subscribe({
       next: (response: any) => {
         let userLog = response;
-        console.log(userLog);
+        this.storageService.saveUserAndToken(userLog.token, userLog.data)
+        this.router.navigate(['/shop']);
+        console.log("reponse du backend", userLog);
       },
       error : (error: any) => {
         console.log(error);

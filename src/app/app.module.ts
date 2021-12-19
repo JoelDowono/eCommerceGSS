@@ -2,8 +2,26 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PaginatorModule } from 'primeng/paginator';
+import { MenubarModule } from 'primeng/menubar';
+import { SidebarModule } from 'primeng/sidebar';
+import { ButtonModule } from 'primeng/button';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { SlideMenuModule } from 'primeng/slidemenu';
+import { TableModule } from 'primeng/table';
+import { ToolbarModule } from 'primeng/toolbar';
+import { DialogModule } from 'primeng/dialog';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { AvatarModule } from 'primeng/avatar';
+import { StorageService } from './services/storage.service';
+import { GuardGuard } from './services/guard.guard';
+import { InterceptorInterceptor } from './services/interceptor.interceptor';
+import { MenuModule } from 'primeng/menu';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
 
 
 
@@ -30,6 +48,11 @@ import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DeleteProductModalComponent } from './components/delete-product-modal/delete-product-modal.component';
 import { AddOrEditProductModalComponent } from './components/add-or-edit-product-modal/add-or-edit-product-modal.component';
+import { from } from 'rxjs';
+import { ShowProductComponent } from './components/show-product/show-product.component';
+import { MentionsLegalesComponent } from './components/mentions-legales/mentions-legales.component';
+import { PolitiqueDeConfidentialiteComponent } from './components/politique-de-confidentialite/politique-de-confidentialite.component';
+import { ConditionsGeneralesDeVenteComponent } from './components/conditions-generales-de-vente/conditions-generales-de-vente.component';
 
 
 
@@ -47,6 +70,10 @@ export const ROUTES : Routes = [
   {path:'', component: HomeComponent},
   {path:'forgotpassword', component: ForgotpasswordComponent},
   {path:'contact', component: ContactComponent},
+  {path:'components/dashboard', component: DashboardComponent, canActivate: [GuardGuard]},
+  {path:'components/mentions-legales', component: MentionsLegalesComponent},
+  {path:'components/politique-de-confidentialite', component: PolitiqueDeConfidentialiteComponent},
+  {path:'component/conditions-generales-de-vente', component: ConditionsGeneralesDeVenteComponent},
   {path:'**', redirectTo: 'notfound', pathMatch: 'full'}
 ];
 
@@ -74,15 +101,41 @@ export const ROUTES : Routes = [
     DashboardComponent,
     DeleteProductModalComponent,
     AddOrEditProductModalComponent,
+    ShowProductComponent,
+    MentionsLegalesComponent,
+    PolitiqueDeConfidentialiteComponent,
+    ConditionsGeneralesDeVenteComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
     HttpClientModule,
-    PaginatorModule
+    PaginatorModule,
+    MenubarModule,
+    SidebarModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    SlideMenuModule,
+    TableModule,
+    ToolbarModule,
+    DialogModule,
+    RadioButtonModule,
+    AvatarModule,
+    MenuModule,
+    FileUploadModule,
+    ToastModule,
+    ConfirmDialogModule
   ],
-  providers: [],
+  providers: [
+    StorageService,
+    GuardGuard,
+    {
+			provide: HTTP_INTERCEPTORS,
+			useClass: InterceptorInterceptor,
+			multi: true
+		}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

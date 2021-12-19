@@ -34,7 +34,7 @@
            </a> <span class="text-center"> {{article.article_price}} FCFA</span>
             <div class="product-action">
               <div class="product-action-style">
-                <p>{{ article.article_name}}</p>
+                <p>{{ article.article_name }}</p>
                 <a href="#"><i class="fa fa-plus"></i></a>
                 <a href="#"><i class="fas fa-times"></i></a>
                 <a href="#"><i class="fa fa-shopping-cart"></i></a>
@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator>
+<p-paginator [rows]="nbProduct" [totalRecords]="total" (onPageChange)="paginate($event)"></p-paginator>
 
 
        <!-- <div *ngFor="let article of articles">

@@ -1,1 +1,72 @@
-<p>dashboard works!</p>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+<nav class="navbar navbar-expand-lg">
+  <div class="navbar-left">
+    <a class="navbar-brand" href=""><img src="assets/img/Header/global.png" alt=""></a>
+  </div>
+  <div class="navbar-right">
+    <ul>
+      <li><p-avatar shape="circle"  image="https://i2.wp.com/www.lesiteinfo.com/wp-content/uploads/2021/10/toto-2.jpg?fit=1200%2C600&ssl=1"></p-avatar></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="sidebar-container">
+  <div class="sidebar-logo">
+    <h1>Admin GSS</h1>
+  </div>
+  <ul class="sidebar-navigation">
+    <li class="header">Navigation</li>
+    <li>
+      <a routerLink="/home">
+        <i class="fa fa-home" aria-hidden="true"></i> Page d'accueil
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-tachometer-alt" aria-hidden="true"></i> Dashboard
+      </a>
+    </li>
+    <li class="header">Administration</li>
+    <li>
+      <a href="#">
+        Produits <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        commandes <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Clients <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Catégorie <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="content-container">
+
+  <div class="container-fluid">
+
+    <app-show-product></app-show-product>
+
+
+    <!-- <div class="jumbotron">
+      <h1>Navbar example</h1>
+      <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+      <p>To see the difference between static and fixed top navbars, just scroll.</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+      </p>
+    </div>-->
+
+  </div>
+</div>

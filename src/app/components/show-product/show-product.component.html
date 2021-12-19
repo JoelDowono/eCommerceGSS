@@ -1,0 +1,115 @@
+<div class="card">
+  <p-toolbar styleClass="p-mb-4">
+    <ng-template pTemplate="left">
+        <button pButton pRipple label="Ajout Produits" icon="pi pi-plus" class="p-button-success p-mr-2 p-button-sm" (click)="addProduct()"></button>
+    </ng-template>
+    <ng-template pTemplate="right">
+
+    </ng-template>
+  </p-toolbar>
+
+  <p-table [value]="articles" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+    <ng-template pTemplate="caption">
+      <h5 class="p-m-0">Gérer les produits</h5>
+  </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>id</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Image</th>
+            <th>Catégorie</th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.article_name }}</td>
+            <td>{{ product.article_description }}</td>
+            <td>{{ product.article_price }} FCFA</td>
+            <td>{{ product.article_quantity }}</td>
+            <td><img [src]="product.article_picture" alt=""  class="img-fluid"></td>
+            <td>{{ product.article_category }}</td>
+            <td>
+              <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>&nbsp;
+              <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+            </td>
+
+            <!--   -->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="p-d-flex p-ai-center p-jc-between">
+        <p-paginator [rows]="nbProduct" [totalRecords]="total" (onPageChange)="paginate($event)"></p-paginator>
+        Nous avons au total {{articles ? articles.length : 0 }} produits.
+      </div>
+    </ng-template>
+  </p-table>
+</div>
+
+
+<!-- product dialog -->
+
+<p-dialog [(visible)]="productDialog" [style]="{width: '450px'}" header="Details de l'article" [modal]="true" styleClass="p-fluid" (onHide)="hideDialog()">
+  <ng-template pTemplate="content">
+    <div class="p-field">
+      <label for="name">Nom</label>
+      <input type="text" pInputText id="name" autofocus [formControl]="getFromControl('article_name')"/>
+    </div>
+    <div class="p-field">
+      <label for="description">Description</label>
+      <textarea id="description" pInputTextarea required rows="3" cols="20" [formControl]="getFromControl('article_description')"></textarea>
+    </div>
+    <div class="p-field">
+      <label for="price">Prix</label>
+      <input type="number" pInputText id="price" [formControl]="getFromControl('article_price')"/>
+    </div>
+    <div class="p-field">
+      <label for="quantity">Quantité</label>
+      <input type="number" pInputText id="quantity" [formControl]="getFromControl('article_quantity')" />
+    </div>
+    <div class="p-field">
+      <label for="image">
+        Image
+        <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block"></p-fileUpload>
+      </label>
+    </div>
+    <div class="p-field">
+      <label for="Category">Category</label>
+    </div>
+    <div id="p-field">
+      <div class="p-field-left">
+        <div class="p-field-radiobutton">
+          <p-radioButton name="category" value="Computer" class="radio" inputId="category1" [formControl]="getFromControl('article_category')"></p-radioButton>
+          <label for="category1" class="radio-label">Computer</label>
+        </div>
+        <div class="p-field-radiobutton">
+          <p-radioButton name="category" value="Desk" class="radio" inputId="category2" [formControl]="getFromControl('article_category')"></p-radioButton>
+          <label for="category2" class="radio-label">Desk</label>
+        </div>
+      </div>
+      <div class="p-field-right">
+        <div class="p-field-radiobutton">
+          <p-radioButton name="category" value="School" class="radio" inputId="category3" [formControl]="getFromControl('article_category')"></p-radioButton>
+          <label for="category3" class="radio-label">School</label>
+        </div>
+        <div class="p-field-radiobutton">
+          <p-radioButton name="category" value="Other" class="radio" inputId="category4" [formControl]="getFromControl('article_category')"></p-radioButton>
+          <label for="category4" class="radio-label">Other</label>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+   <ng-template pTemplate="footer">
+    <button pButton pRipple label="Cancel"  icon="pi pi-times" class="p-button-danger p-button-sm p-button-text" (click)="hideDialog()" ></button>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-success p-button-sm p-button-text" (click)="saveProduct()"></button>
+  </ng-template>
+</p-dialog>
+
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+
