@@ -8,7 +8,6 @@
     </div>
     <div class="topnav-right">
       <ul>
-        <li> <a routerLink="/account">Mon compte</a></li>
         <li> <a routerLink="/wishlist"> Mes préférés</a></li>
         <li> <a routerLink="/checkout">Paiement</a></li>
       </ul>
@@ -23,13 +22,13 @@
         <li routerLinkActive="active"><a class="active" routerLink="/home">Accueil</a></li>
         <li routerLinkActive="active"><a routerLink="/shop">Boutique</a></li>
         <li routerLinkActive="active"><a routerLink="/contact">Contact</a></li>
-        <li *ngIf="isSuperAdmin || isAdmin" routerLinkActive="active"><a routerLink="/components/dashboard">Dashboard</a></li>
+        <li *ngIf="isSuperAdmin || isAdmin" routerLinkActive="active"><a routerLink="/dashboard">Dashboard</a></li>
 
-        <button id="btn-menu" type="button" pButton pRipple icon="pi pi-bars" label="Compte" (click)="menu.toggle($event)"></button>
+        <button id="btn-menu" type="button" pButton pRipple icon="pi pi-user"  (click)="menu.toggle($event)"></button>
         <p-menu #menu [popup]="true" [model]="items"></p-menu>
 
         <div class="cart-icon">
-          <i class="fas fa-shopping-cart"></i>
+          <a routerLink="/shop/cart"><i class="fas fa-shopping-cart p-text-secondary" severity="success" pBadge style="font-size: 1.5rem" [value]="cartService.articles.length.toString()"></i></a>
         </div>
         <div class="input-group">
           <input type="search" class="form-control" placeholder="Search" aria-label="Search"

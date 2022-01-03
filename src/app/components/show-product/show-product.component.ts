@@ -1,6 +1,6 @@
 import { Products } from './../../models/products';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { ProductsService } from '../../services/products.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
@@ -19,7 +19,7 @@ export class ShowProductComponent implements OnInit {
   category!: string;
   idProduct: number = 0;
   form  = {};
-  constructor(private productService: ProductsService,private messageService: MessageService, private confirmationService: ConfirmationService) { //this.registerForm = this.fb.group
+  constructor(private productService: ProductsService,private messageService: MessageService, private confirmationService: ConfirmationService) {
     this.form = {
       article_name: new FormControl ('', Validators.required),
       article_description: new FormControl ('',Validators.required),
@@ -157,19 +157,4 @@ export class ShowProductComponent implements OnInit {
     this.form["article_picture"].value = '';
     this.form["article_category"].value = '';
   }
-
-
-/*
-this.usersService.Login(users).subscribe({
-      next: (response: any) => {
-        let userLog = response;
-        this.storageService.saveUserAndToken(userLog.token, userLog.data)
-        this.router.navigate(['/shop']);
-        console.log("reponse du backend", userLog);
-      },
-      error : (error: any) => {
-        console.log(error);
-      }
-    })
-*/
 }

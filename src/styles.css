@@ -10,7 +10,11 @@ body{
   color: #555;
   background-color: #f1f1f1;
 }
-
+.p-badge {
+    min-width: 1rem !important;
+    line-height: 1rem !important;
+    height: 1rem !important;
+}
 
 
 

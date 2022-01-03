@@ -24,7 +24,15 @@ export class HeaderComponent implements OnInit {
           this.storageService.removeUserToken();
           this.router.navigate(['/']);
         }
-      }]
+      },
+      {
+        label: 'Mon compte',
+        icon: 'pi pi-user-edit',
+        command: () => {
+          this.router.navigate(['/account'])
+        }
+      }
+    ]
     }
     else {
       this.items = [{

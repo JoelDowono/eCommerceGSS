@@ -34,15 +34,13 @@ export class StorageService {
 		}
 	}
 
-
-
-  //verifie le role de l'utilisateur
-  //superadmin
-
   getUser() {
     let userString = this.sensitiveStorage.getItem("MY_USER");
     return JSON.parse(userString? userString: '{}');
   }
+
+  //verifie le role de l'utilisateur
+  //superadmin
 
   isUserRoleSuperAdmin(): boolean {
     const user = this.getUser();
@@ -61,6 +59,29 @@ export class StorageService {
     }
     else {
       return false;
+    }
+  }
+
+  isUserRole(): boolean {
+    const user = this.getUser();
+    if (user?.roleId === 3) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  saveCart(cart:any) {
+    this.sensitiveStorage.setItem("CART",JSON.stringify(cart));
+  }
+
+  getCart() {
+    let cart =   this.sensitiveStorage.getItem("CART");
+    if(!cart || cart === '') {
+      return [];
+    } else {
+      return JSON.parse(cart);
     }
   }
 

@@ -39,10 +39,9 @@ a{
 /* page account */
 
 .container{
-  height: 450px;
   padding: 20px 0;
   margin: 0 auto;
-  width: 1000px;
+  width: 1100px;
   display: flex;
 }
 
@@ -78,16 +77,26 @@ a.nav-link:hover{
   background-color: white;
   width: 100%;
   padding: 30px;
-  height: 400px;
 }
 
-h6{
+.content-area-top2{
+  margin-left: 8rem;
+}
+
+h5{
   font-size: 15px;
   margin: 0 0 30px 0;
   font-family: 'Zen Antique', serif;
   font-weight: bold;
   color: black;
   line-height: 1.5;
+}
+
+h6{
+  font-size: 14px;
+  margin: 0 0 30px 30px;
+  font-family: 'Zen Antique', serif;
+  color: black;
 }
 
 .content-area-ul{

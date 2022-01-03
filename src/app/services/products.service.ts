@@ -14,13 +14,11 @@ export class ProductsService {
   }
 
   GetArticles(page: number): Observable<Response>{
-    //let headers: any = {'Authorization': 'Bearer ' + localStorage.getItem('jwt')}
     let url = this.url + '/api/articles?page=' + page;
     return this.http.get<Response>(url);
   }
 
   GetAllArticles(): Observable<Response>{
-    //let headers: any = {'Authorization': 'Bearer ' + localStorage.getItem('jwt')}
     let url = this.url + '/api/articles';
     return this.http.get<Response>(url);
   }
@@ -41,11 +39,6 @@ export class ProductsService {
     let url = this.url + '/api/articles/' + id;
     return this.http.delete<Products>(url);
   }
-
-  /*modification de l'article
-  updateArticle(products: Products): Observable<Products> {
-
-  }*/
 }
 
 

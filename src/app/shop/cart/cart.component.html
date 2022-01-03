@@ -1,1 +1,112 @@
-<p>cart works!</p>
+<app-navigation></app-navigation>
+
+<nav aria-label="breadcrumb">
+  <div class="nav-contain">
+    <div class="nav-left">
+      <h3>PANIERS</h3>
+      <p>MON PANIER</p>
+    </div>
+    <div class="nav-right">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Panier</li>
+      </ol>
+    </div>
+  </div>
+</nav>
+
+<div class="d-flex flex-row justify-content-around">
+  <div class="flex" id="product-bloc">
+    <div
+      class="container mt-3 mb-4 p-2 bg-white rounded"
+      *ngFor="let article of cartService.articles"
+    >
+      <div class="row">
+        <div class="col-md-3">
+          <img
+            class="img-fluid img-responsive rounded product-image"
+            [src]="article.product.article_picture"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="d-flex flex-row justify-content-start">
+            <div class="d-flex flex-column  w-75">
+              <h5 class="mr-1">{{ article.product.article_name }}</h5>
+              <p class="para mb-0">
+                {{ article.product.article_description }}<br /><br />
+              </p>
+            </div>
+            <div class="d-flex flex-column justify-content-start">
+              <h6 class="mr-1">{{ article.product?.article_price }} Fcfa</h6>
+              <div class="d-flex justify-content-around align-items-center">
+                <button
+                  pButton
+                  pRipple
+                  icon="pi pi-trash"
+                  class="p-button-rounded p-button-warning mr-1"
+                  (click)="deleteProductFromCart(article.product)"
+                ></button>
+                <h6 class="text-success">
+                  {{ article.product.article_category }}
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex flex-row justify-content-start">
+            <div class="d-flex w-75">
+              <p-inputNumber
+            [(ngModel)]="article.quantity"
+            [showButtons]="true"
+            buttonLayout="horizontal"
+            inputId="horizontal"
+            spinnerMode="horizontal"
+            [step]="1"
+            [min]="1"
+            [max]="article.product.article_quantity"
+            decrementButtonClass="p-button-danger"
+            incrementButtonClass="p-button-success"
+            incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"
+          >
+          </p-inputNumber>
+            </div>
+            <div class="d-flex ">
+              <h4 class="mr-1">{{ article.product.article_price * article.quantity }} Fcfa</h4>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="flex" id="recap-bloc">
+  <h4 class="mr-1">Résumé <hr></h4>
+  <div class="d-flex content-right">
+    <h5 id="h5-left">Total de la commande</h5>
+    <h6 id="h6-right">{{getTotal()}} Fcfa</h6>
+  </div><hr>
+  <div class="d-flex content-right">
+    <span class="p-float-label" style="width: 100%; margin-top: 5px;">
+      <input id="float-input" style="width: 100%;" type="text" pInputText [(ngModel)]="deliveryAddress" #deliveryRef="ngModel"  required>
+      <label for="float-input">Adresse de livraison</label>
+  </span>
+  </div><hr>
+  <button
+    pButton
+    pRipple
+    icon="pi pi-shopping-cart"
+    class="p-button-rounded p-button-warning mr-1"
+    label="Commander"
+    (click)="buy()"
+    [disabled]="deliveryRef.invalid"
+  ></button>
+</div>
+</div>
+
+<app-features></app-features>
+<app-partners></app-partners>
+<app-footer></app-footer>
+
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>

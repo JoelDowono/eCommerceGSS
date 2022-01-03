@@ -21,7 +21,8 @@ import { MenuModule } from 'primeng/menu';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-
+import { DataViewModule } from 'primeng/dataview';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -53,8 +54,9 @@ import { ShowProductComponent } from './components/show-product/show-product.com
 import { MentionsLegalesComponent } from './components/mentions-legales/mentions-legales.component';
 import { PolitiqueDeConfidentialiteComponent } from './components/politique-de-confidentialite/politique-de-confidentialite.component';
 import { ConditionsGeneralesDeVenteComponent } from './components/conditions-generales-de-vente/conditions-generales-de-vente.component';
-
-
+import { CartService } from './services/cart.service';
+import { BadgeModule  } from 'primeng/badge';
+import {InputNumberModule} from 'primeng/inputnumber';
 
 export const ROUTES : Routes = [
   {path:'home', component: HomeComponent},
@@ -70,11 +72,17 @@ export const ROUTES : Routes = [
   {path:'', component: HomeComponent},
   {path:'forgotpassword', component: ForgotpasswordComponent},
   {path:'contact', component: ContactComponent},
-  {path:'components/dashboard', component: DashboardComponent, canActivate: [GuardGuard]},
-  {path:'components/mentions-legales', component: MentionsLegalesComponent},
-  {path:'components/politique-de-confidentialite', component: PolitiqueDeConfidentialiteComponent},
-  {path:'component/conditions-generales-de-vente', component: ConditionsGeneralesDeVenteComponent},
+  {path:'dashboard', component: DashboardComponent, canActivate: [GuardGuard],
+  children: [
+    {path:'',component: DeleteProductModalComponent},
+    {path:'products',component: ShowProductComponent}
+  ]},
+  {path:'mentions-legales', component: MentionsLegalesComponent},
+  {path:'politique-de-confidentialite', component: PolitiqueDeConfidentialiteComponent},
+  {path:'conditions-generales-de-vente', component: ConditionsGeneralesDeVenteComponent},
+  {path:'shop/cart', component: CartComponent},
   {path:'**', redirectTo: 'notfound', pathMatch: 'full'}
+
 ];
 
 @NgModule({
@@ -125,10 +133,15 @@ export const ROUTES : Routes = [
     MenuModule,
     FileUploadModule,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    DataViewModule,
+    BadgeModule,
+    InputNumberModule,
+    InputTextModule
   ],
   providers: [
     StorageService,
+    CartService,
     GuardGuard,
     {
 			provide: HTTP_INTERCEPTORS,

@@ -1,6 +1,8 @@
 import { Products } from './../models/products';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
+import { SelectItem } from 'primeng/api';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-shop',
@@ -13,7 +15,8 @@ export class ShopComponent implements OnInit {
   nbProduct = 6;
   articles: any;
   product!: Products;
-  constructor(private productService: ProductsService) { }
+
+  constructor(private productService: ProductsService, private cartService: CartService) { }
 
   paginate(event: any){
     console.log(event.page);
@@ -38,10 +41,12 @@ export class ShopComponent implements OnInit {
         console.log(error);
       }
     })
-
-    /*this.productService.createArticle(this.product).subscribe({
-
-    })*/
   }
+
+  addToCart(article: Products){
+      this.cartService.addArticleToCart(article,1);
+      console.log(this.cartService.articles);
+  }
+
 }
 

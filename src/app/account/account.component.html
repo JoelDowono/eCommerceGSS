@@ -19,29 +19,70 @@
 <div class="container">
     <div class="content-sidenav">
       <ul class="nav-list">
-        <a class="nav-link" id="active"> Connexion/Inscription</a>
-        <a class="nav-link ">Mon compte</a>
+        <a class="nav-link" id="active"> Mon compte</a>
+        <a class="nav-link ">edhged</a>
         <a class="nav-link">Carnet d'adresses</a>
         <a class="nav-link">Liste de souhaits</a>
         <a class="nav-link">Retour</a>
       </ul>
     </div>
-    <div class="content-area">
-      <div class="content-area-top">
-        <h6>MON COMPTE</h6>
-        <ul class="content-area-ul">
-          <li><a href="">Modifier vos informations</a></li>
-          <li><a href="">Changez votre mot de passe</a></li>
-          <li><a href="">Modifier votre liste de souhaits</a></li>
-        </ul>
-      </div> <hr>
+    <div class="content-area" *ngIf="user">
+      <div class="d-flex">
+        <div class="content-area-top">
+          <h5>Informations du compte</h5>
+          <h6>Informations de contact</h6>
+          <ul class="content-area-ul">
+            <li>{{user.first_name}} {{user.last_name}}</li>
+            <li>{{user.user_mail}}</li>
+            <li><a href="">Modifier Vos informations</a></li>
+            <li>Carnet d’adresses <a href="">Gérer les adresses</a></li>
+          </ul>
+        </div>
+        <div class="content-area-top2">
+          <h5>Adresse de facturation par défaut</h5>
+          <h6>Adresse de livraison par défaut</h6>
+          <ul class="content-area-ul">
+            <li>M.{{user.first_name}} {{user.last_name}}</li>
+            <li>{{user.user_mail}}</li>
+            <li>adresse de livraison</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
       <div class="content-area-down">
-        <h6>MES COMMANDES</h6>
-        <ul class="content-area-ul">
-          <li><a href="">Historique des commandes</a> </li>
-          <li><a href="">Acheter à nouveau</a></li>
-          <li><a href="">Demandes de retour</a></li>
-        </ul>
+        <p-table [value]="orders" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+          <ng-template pTemplate="caption">
+            <h5 class="p-m-0">Commandes récentes <a href="">Voir tout</a></h5>
+        </ng-template>
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>date</th>
+                  <th>Expédié à </th>
+                  <th>total de la commande</th>
+                  <th>statut</th>
+                  <th>action</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+              <tr>
+                  <td>sgsdfg</td>
+                  <td>ethdbh</td>
+                  <td>ethberst</td>
+                  <td>zretfgbjhnr</td>
+                  <td>voir les commandes</td>
+                  <!--<td>
+                    <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>&nbsp;
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+                  </td> -->
+              </tr>
+          </ng-template>
+          <!-- <ng-template pTemplate="summary">
+            <div class="p-d-flex p-ai-center p-jc-between">
+              <p-paginator [rows]="nbProduct" [totalRecords]="total" (onPageChange)="paginate($event)"></p-paginator>
+              Nous avons au total {{articles ? articles.length : 0 }} produits.
+            </div>
+          </ng-template>-->
+        </p-table>
       </div>
       </div>
 </div>
