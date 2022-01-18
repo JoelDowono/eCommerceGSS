@@ -72,10 +72,9 @@
       <input type="number" pInputText id="quantity" [formControl]="getFromControl('article_quantity')" />
     </div>
     <div class="p-field">
-      <label for="image">
-        Image
-        <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block"></p-fileUpload>
-      </label>
+      <label for="image">Image</label>
+      <input type="text" pInputText id="picture" [formControl]="getFromControl('article_picture')" />
+
     </div>
     <div class="p-field">
       <label for="Category">Category</label>

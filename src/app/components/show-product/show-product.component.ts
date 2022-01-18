@@ -64,7 +64,7 @@ export class ShowProductComponent implements OnInit {
     this.form["article_description"].value = product.article_description;
     this.form["article_price"].value = product.article_price;
     this.form["article_quantity"].value = product.article_quantity;
-    this.form["article_picture"].value = '';
+    this.form["article_picture"].value = product.article_picture;
     this.form["article_category"].value = product.article_category;
 
     this.idProduct = product.id;
@@ -108,8 +108,7 @@ export class ShowProductComponent implements OnInit {
       article_description: this.form["article_description"].value,
       article_price: this.form["article_price"].value,
       article_quantity: this.form["article_quantity"].value,
-      //récupération de l'image de manière statique
-      article_picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
+      article_picture: this.form["article_picture"].value,
       article_category: this.form["article_category"].value,
     } as Products
 

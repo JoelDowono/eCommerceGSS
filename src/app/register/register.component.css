@@ -1,11 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
 
+/* nav */
+nav{
+  background-color: white;
+  padding: 40px 0;
+  border-bottom: 1px solid #8c8c8c;
+  margin: 0 auto;
+  height: 50px;
+  font-family: 'Zen Antique', serif;
+  margin-bottom: 30px;
+}
+
+.nav-contain{
+  width: 1000px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  height: 100%;
+}
+
+.nav-left{
+  color: black;
+  line-height: 0%;
+}
+
+a{
+  text-decoration: none;
+  color: #fc5356;
+}
+
+.breadcrumb{
+  font-weight: bold;
+}
+
+.active{
+  color: black;
+}
+
 .card {
   margin: 0 auto;
   margin-top: 50px;
   width: 550px;
   border-radius: 5px;
-  border: 0.2px solid green;
 }
 
 .card-img-top{
@@ -28,6 +65,11 @@ label.form-check-label{
 
 input{
   border: 0.2px solid black;
+}
+
+.btn {
+  background-color: #fc5356;
+  color: #fff;
 }
 
 

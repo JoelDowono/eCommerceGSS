@@ -1,1 +1,46 @@
-<p>single-product works!</p>
+<app-navigation></app-navigation>
+
+<nav aria-label="breadcrumb">
+  <div class="nav-contain">
+    <div class="nav-left">
+      <h3> ARTICLE </h3>
+      <p>Voici les informations détaillées sur l'article sélectionné.</p>
+    </div>
+    <div class="nav-right">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Boutique</li>
+        <li class="breadcrumb-item active" aria-current="page">Produit</li>
+      </ol>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper">
+  <div class="product-img">
+    <img [src]="article.article_picture" height="420" width="327">
+  </div>
+  <div class="product-info">
+    <div class="product-text">
+      <h1>{{article.article_name}} </h1>
+      <h2>{{article.article_category}}</h2>
+      <p>{{article.article_description}}</p>
+    </div>
+    <div class="product-price-btn">
+      <p><span>{{article.article_price}}</span>FCFA</p>
+      <button
+        pButton
+        pRipple
+        icon="pi pi-shopping-cart"
+        class="p-button-rounded p-button-warning mr-1"
+        label="retour"
+        routerLink="/shop">
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<app-features></app-features>
+<app-partners></app-partners>
+<app-footer></app-footer>

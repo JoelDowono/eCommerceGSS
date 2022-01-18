@@ -5,8 +5,9 @@
     <a class="navbar-brand" href=""><img src="assets/img/Header/global.png" alt=""></a>
   </div>
   <div class="navbar-right">
-    <ul>
-      <li><p-avatar shape="circle"  image="https://i2.wp.com/www.lesiteinfo.com/wp-content/uploads/2021/10/toto-2.jpg?fit=1200%2C600&ssl=1"></p-avatar></li>
+    <span>BIENVENUE,</span>
+    <ul id="hello">
+      <li *ngIf="user">{{user.first_name}} {{user.last_name}}!</li>
     </ul>
   </div>
 </nav>

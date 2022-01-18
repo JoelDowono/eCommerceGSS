@@ -6,9 +6,19 @@
 }
 
 .navbar-right {
-  margin-left: 75rem;
-  margin-top: 25px;
-  display: inline;
+  margin-left: 74rem;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+#hello {
+  list-style: none;
+  font-family: 'Zen Antique', serif;
+  font-size: 18px;
+}
+
+span {
+  margin-left: 2rem;
 }
 
 .navbar-brand img {
@@ -118,3 +128,5 @@ li.header {
   color: black;
   font-weight: bold;
 }
+
+

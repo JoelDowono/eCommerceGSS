@@ -11,9 +11,14 @@ export class UsersService {
   url: string = "http://localhost:3000";
   constructor(private http: HttpClient) { }
 
-  Login(user: any): any{
+  login(user: any): any {
     let url = this.url + '/api/login';
     return this.http.post(url, user);
+  }
+
+  register(user: any): any {
+    let url = this.url + '/api/users';
+    return this.http.post(url, user)
   }
 
   getUser(id: number) {

@@ -1,0 +1,68 @@
+<div class="container-fluid p-2">
+  <!-- card en tête-->
+  <div class="d-flex justify-content-between mb-2">
+      <div class="card col- bg-primary w-25">
+        <div class="card-body text-center">
+          <p class="card-text">MONTANT TOTAL DES COMMANDES</p>
+          <h4>{{totalAmount}}</h4>
+        </div>
+      </div>
+      <div class="card bg-warning w-25">
+        <div class="card-body text-center">
+          <p class="card-text">ARTICLE LE PLUS VENDU</p>
+          <div *ngIf="topSaleArticle.value">
+            <h4 >{{topSaleArticle.value.article_name}}</h4>
+            <span>{{topSaleArticle.quantity}} UNités Vendues</span>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- petit graphique -->
+  <div class="card mb-2">
+    <h5>Graphique des commandes</h5>
+    <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+  </div>
+  <!-- tableau des commandes
+   createdAt: any;
+  id: number;
+  order_adress: string;
+  order_price: number;
+  order_status: string;
+  updatedAt: any;
+  userId: number; -->
+  <div class="row">
+    <div class="col-md-12">
+      <p-table [value]="orders" styleClass="p-datatable-gridlines" responsiveLayout="scroll" [paginator]="true" [rows]="5">
+        <ng-template pTemplate="header">
+          <tr>
+              <th>Date</th>
+              <th>Expédié à l'adresse</th>
+              <th>Montant</th>
+              <th>Status</th>
+              <th></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-order let-rowIndex="rowIndex" >
+        <tr>
+            <td>
+                {{order.createdAt | date:"dd/MM/yyyy"}}
+            </td>
+            <td>
+                {{order.order_adress}}
+            </td>
+            <td>
+                {{order.order_price}}
+            </td>
+            <td>
+                {{order.order_status}}
+            <td>
+              <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editOrder(order)"></button>
+            </td>
+        </tr>
+    </ng-template>
+      </p-table>
+    </div>
+  </div>
+
+</div>

@@ -14,4 +14,9 @@ export class OrdersService {
     let url = this.url + '/api/orders';
     return this.http.post(url,orderPackage);
   }
+
+  getAllOrders() : Observable<any>{
+    let url = this.url + '/api/orders';
+    return this.http.get(url);
+  }
 }

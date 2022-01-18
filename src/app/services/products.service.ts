@@ -13,11 +13,19 @@ export class ProductsService {
   constructor(private http: HttpClient) {
   }
 
+  //obtenir les articles avec la pagination
   GetArticles(page: number): Observable<Response>{
     let url = this.url + '/api/articles?page=' + page;
     return this.http.get<Response>(url);
   }
 
+  //obtenir un article grâce à l'id
+  getOneArticle(id: string) : Observable<Response> {
+    let url = this.url + '/api/articles/' + id;
+    return this.http.get<Response>(url)
+  }
+
+  //obtenir tous les articles
   GetAllArticles(): Observable<Response>{
     let url = this.url + '/api/articles';
     return this.http.get<Response>(url);
@@ -35,6 +43,7 @@ export class ProductsService {
     return this.http.put<Products>(url, product);
   }
 
+  //supprimer un article
   deleteArticle(id: number) {
     let url = this.url + '/api/articles/' + id;
     return this.http.delete<Products>(url);

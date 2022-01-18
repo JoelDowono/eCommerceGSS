@@ -23,7 +23,7 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DataViewModule } from 'primeng/dataview';
 import {InputTextModule} from 'primeng/inputtext';
-
+import {ChartModule} from 'primeng/chart';
 
 
 
@@ -57,6 +57,7 @@ import { ConditionsGeneralesDeVenteComponent } from './components/conditions-gen
 import { CartService } from './services/cart.service';
 import { BadgeModule  } from 'primeng/badge';
 import {InputNumberModule} from 'primeng/inputnumber';
+import { ReportsComponent } from './components/reports/reports.component';
 
 export const ROUTES : Routes = [
   {path:'home', component: HomeComponent},
@@ -65,7 +66,7 @@ export const ROUTES : Routes = [
   {path:'checkout', component: CheckoutComponent},
   {path:'shop', component: ShopComponent},
   {path:'cart', component: CartComponent},
-  {path:'single-product/id', component: SingleProductComponent},
+  {path:'single-product/:id', component: SingleProductComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
   {path:'notfoud', component: NotfoundComponent},
@@ -74,12 +75,12 @@ export const ROUTES : Routes = [
   {path:'contact', component: ContactComponent},
   {path:'dashboard', component: DashboardComponent, canActivate: [GuardGuard],
   children: [
-    {path:'',component: DeleteProductModalComponent},
+    {path:'',component: ReportsComponent},
     {path:'products',component: ShowProductComponent}
   ]},
-  {path:'mentions-legales', component: MentionsLegalesComponent},
-  {path:'politique-de-confidentialite', component: PolitiqueDeConfidentialiteComponent},
-  {path:'conditions-generales-de-vente', component: ConditionsGeneralesDeVenteComponent},
+  {path:'components/mentions-legales', component: MentionsLegalesComponent},
+  {path:'components/politique-de-confidentialite', component: PolitiqueDeConfidentialiteComponent},
+  {path:'components/conditions-generales-de-vente', component: ConditionsGeneralesDeVenteComponent},
   {path:'shop/cart', component: CartComponent},
   {path:'**', redirectTo: 'notfound', pathMatch: 'full'}
 
@@ -113,6 +114,7 @@ export const ROUTES : Routes = [
     MentionsLegalesComponent,
     PolitiqueDeConfidentialiteComponent,
     ConditionsGeneralesDeVenteComponent,
+    ReportsComponent,
   ],
   imports: [
     BrowserModule,
@@ -137,7 +139,8 @@ export const ROUTES : Routes = [
     DataViewModule,
     BadgeModule,
     InputNumberModule,
-    InputTextModule
+    InputTextModule,
+    ChartModule
   ],
   providers: [
     StorageService,

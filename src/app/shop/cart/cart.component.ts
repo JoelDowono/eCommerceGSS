@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { CartService } from 'src/app/services/cart.service';
 import { OrdersService } from 'src/app/services/orders.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +16,7 @@ export class CartComponent implements OnInit {
   deliveryAddress: string = "";
 
   constructor(public cartService: CartService,private messageService: MessageService, private confirmationService: ConfirmationService,
-    private orderService: OrdersService,
+    private orderService: OrdersService, private router: Router,
     private storage: StorageService) { }
 
   ngOnInit(): void {
@@ -32,6 +33,7 @@ export class CartComponent implements OnInit {
     } else {
       this.createCommand(user.id);
     }
+
   }
 
   createCommand(userId){
@@ -57,6 +59,7 @@ export class CartComponent implements OnInit {
             this.deliveryAddress = "";
             this.cartService.clearCart();
             this.messageService.add({severity:'success', summary:'Commande enregistrée', detail: "Votre commande a bien été enregistée."});
+            setTimeout(()=> {this.router.navigate(['/shop'])},1500)
           },
           (error)=> {
             this.messageService.add({severity:'error', summary:'Erreur', detail: "Une erreur inattendue, veuillez réessayer"});

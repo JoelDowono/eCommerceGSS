@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     console.log(users);
 
     //données qui viennent du backend
-    this.usersService.Login(users).subscribe({
+    this.usersService.login(users).subscribe({
       next: (response: any) => {
         let userLog = response;
         this.storageService.saveUserAndToken(userLog.token, userLog.data)

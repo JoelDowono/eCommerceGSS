@@ -1,3 +1,20 @@
+<app-navigation></app-navigation>
+
+<nav aria-label="breadcrumb">
+  <div class="nav-contain">
+    <div class="nav-left">
+      <h3> Inscription </h3>
+      <p>Créer un compte</p>
+    </div>
+    <div class="nav-right">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Inscription</li>
+      </ol>
+    </div>
+  </div>
+</nav>
+
 <div class="card">
   <img class="card-img-top" src="assets/img/Content/register/image_register.jpg" alt="Card image cap">
   <div class="card-body">
@@ -116,7 +133,11 @@
             <span *ngIf="registerForm.get('password2')?.errors?.minlength">
               15 caractères maximum
             </span>
+            <span *ngIf="registerForm.get('password2')?.value !== registerForm.get('password1')?.value">
+              mots de passe différents
+            </span>
           </div>
+
         </div>
       </div>
       <div class="form-check mb-2">
@@ -124,7 +145,7 @@
           <input
             class="form-check-input"
             type="checkbox"
-            formControlName="remember"
+            formControlName="agree"
           > Conformément à la Loi Informatique et Libertés et Règlement général sur la protection des données (RGPD), vous disposez d’un droit d’accès, de modification, de suppression et d’opposition au traitement de vos données à caractère personnel.
           Pour plus d'informations, veuillez consulter nos <a href="">mentions légales</a>  et notre <a href="">politique de confidentialité</a>.
         </label>
@@ -132,7 +153,7 @@
         <button
           class="btn btn-success"
           type="submit"
-          class="btn btn-success"
+          class="btn btn-sm"
           [disabled]="!registerForm.valid"
         >
           Inscription
@@ -140,8 +161,7 @@
     </form>
   </div>
 </div>
-<div class="text-center">
-  <p>
 
-  </p>
-</div>
+<app-features></app-features>
+<app-partners></app-partners>
+<app-footer></app-footer>

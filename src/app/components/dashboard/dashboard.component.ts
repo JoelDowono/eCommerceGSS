@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Response } from 'src/app/models/response';
-import { ProductsService } from '../../services/products.service';
+import { StorageService } from 'src/app/services/storage.service';
+import { UsersService } from 'src/app/services/users.service';
 
 
 @Component({
@@ -10,14 +10,19 @@ import { ProductsService } from '../../services/products.service';
 })
 export class DashboardComponent implements OnInit {
 
-  articles: any;
-  articleSub: any;
-
-  constructor(private productService: ProductsService) { }
-
+  user;
+  constructor(private usersService: UsersService, private storageService: StorageService) { }
 
   ngOnInit(): void {
-
+    const user = this.storageService.getUser();
+    this.usersService.getUser(user.id).subscribe({
+      next: (response: any) => {
+        this.user = response.data;
+      },
+      error : (error: any) => {
+        console.log(error);
+      }
+    })
   }
 
 }
