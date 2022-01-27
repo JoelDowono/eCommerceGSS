@@ -24,6 +24,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DataViewModule } from 'primeng/dataview';
 import {InputTextModule} from 'primeng/inputtext';
 import {ChartModule} from 'primeng/chart';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 
 
@@ -140,7 +141,9 @@ export const ROUTES : Routes = [
     BadgeModule,
     InputNumberModule,
     InputTextModule,
-    ChartModule
+    ChartModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
   providers: [
     StorageService,

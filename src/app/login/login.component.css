@@ -43,7 +43,7 @@ a{
 .card {
   margin: 0 auto;
   margin-top: 20px;
-  width: 1330px;
+  width: 1400px;
   border-radius: 5px;
   border: 1px solid #8c8c8c;
   height: 740px;
@@ -73,8 +73,8 @@ div.img-form.mb-3.mt-3{
   padding-top: 0px;
   margin-top: 16px;
   margin-left: 18px;
-  width: 300px;
-  height: 450px;
+  width: 350px;
+  height: 500px;
   background-color: #e7eaeb;
   border-radius: 5px;
   border: 1px solid #8c8c8c;

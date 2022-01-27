@@ -48,6 +48,12 @@ export class ProductsService {
     let url = this.url + '/api/articles/' + id;
     return this.http.delete<Products>(url);
   }
+
+  searchArticle(name: string):Observable<Response> {
+    let url = this.url + '/api/articles?article_name='+name;
+    return this.http.get<Response>(url);
+
+  }
 }
 
 

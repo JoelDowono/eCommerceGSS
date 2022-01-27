@@ -77,19 +77,15 @@
 
           </div>
         </div>
-        <div class="form-check mb-2">
-          <label class="form-check-label">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              formControlName="remember"
-              >Se souvenir de moi
-          </label>
+        <div class="mb-3">
+          <re-captcha (resolved)="resolved($event)"
+            siteKey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI">
+          </re-captcha>
         </div>
         <button
           type="submit"
           class="btn btn-sm"
-          [disabled]="!loginForm.valid">Connexion
+          [disabled]="!loginForm.valid || captchaToken?.length < 1">Connexion
         </button><br><br>
 
         <a class="form-link" routerLink="/forgotpassword">Mot de passe oublié ?</a><hr>

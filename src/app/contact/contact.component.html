@@ -8,8 +8,8 @@
     </div>
     <div class="nav-right">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item active"><a routerLink="/home">Accueil</a></li>
-        <li class="breadcrumb-item" aria-current="page">Contact</li>
+        <li class="breadcrumb-item active"><a routerLink="/home" [routerLinkActive]="'active'">Accueil</a></li>
+        <li class="breadcrumb-item" aria-current="page"><a routerLink="/contact"  [routerLinkActive]="'active'">Contact</a></li>
       </ol>
     </div>
   </div>
@@ -55,7 +55,6 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      formControlName="agree"
                       >&ensp;je confirme avoir pris connaissance de la <a href="" > politique de confidentialité</a> et des <a href="">mentions légales</a>
                 </div>
               </div>

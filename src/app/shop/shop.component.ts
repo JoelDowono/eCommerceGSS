@@ -16,6 +16,11 @@ export class ShopComponent implements OnInit {
   articles: any;
   product!: Products;
 
+  searchInput: string = "";
+  searchResults: any;
+  showSearchResult = false;
+  searchResultMessage: string = ""
+
   constructor(private productService: ProductsService, private cartService: CartService) { }
 
   paginate(event: any){
@@ -46,6 +51,23 @@ export class ShopComponent implements OnInit {
   addToCart(article: Products){
       this.cartService.addArticleToCart(article,1);
       console.log(this.cartService.articles);
+  }
+
+  searchInputChange() {
+    if(this.searchInput.length > 1) {
+      this.productService.searchArticle(this.searchInput).subscribe(
+        (response) => {
+          this.showSearchResult = true;
+          this.searchResults = response.data;
+          this.searchResultMessage = response.message;
+        },
+        (error) => {
+
+        }
+      )
+    } else {
+      this.showSearchResult = false;
+    }
   }
 
 }

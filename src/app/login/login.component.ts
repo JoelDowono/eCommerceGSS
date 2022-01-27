@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   //déclaration de la propriété loginForm
   public loginForm!: FormGroup;
+  captchaToken ="";
 
   //injection du Formbuilder dans le constructeur
   constructor(private fb: FormBuilder, private usersService: UsersService, private storageService: StorageService, private router: Router) { }
@@ -34,16 +35,16 @@ export class LoginComponent implements OnInit {
     console.log("Donnée du formulaire..." + myEmail + " " + myPassword + " " + isRemember);
     var users = {
       user_mail : myEmail,
-      user_password : myPassword
+      user_password : myPassword,
+      token: this.captchaToken
     }
-    console.log(users);
 
     //données qui viennent du backend
     this.usersService.login(users).subscribe({
       next: (response: any) => {
-        let userLog = response;
-        this.storageService.saveUserAndToken(userLog.token, userLog.data)
-        this.router.navigate(['/shop']);
+       let userLog = response;
+       this.storageService.saveUserAndToken(userLog.token, userLog.data)
+       this.router.navigate(['/shop']);
         console.log("reponse du backend", userLog);
       },
       error : (error: any) => {
@@ -51,5 +52,10 @@ export class LoginComponent implements OnInit {
       }
     })
     // console.log("Données du formulaire...", this.loginForm.value);
+  }
+
+  resolved(captchaRes: string) {
+    this.captchaToken = captchaRes;
+    //console.log(`Resolved response token: ${captchaRes}`);
   }
 }
